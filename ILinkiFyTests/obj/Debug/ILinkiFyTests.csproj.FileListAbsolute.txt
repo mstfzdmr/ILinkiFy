@@ -1,0 +1,14 @@
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\bin\Debug\ILinkiFyTests.dll
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\bin\Debug\ILinkiFyTests.pdb
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\bin\Debug\LinkiFyExtension.dll
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\bin\Debug\LinkiFyExtension.pdb
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\obj\Debug\ILinkiFyTests.csprojResolveAssemblyReference.cache
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\obj\Debug\ILinkiFyTests.dll
+C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\ILinkiFyTests\obj\Debug\ILinkiFyTests.pdb
