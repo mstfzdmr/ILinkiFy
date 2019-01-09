@@ -1,7 +1,0 @@
-C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\LinkiFyExtension\bin\Debug\netstandard1.4\LinkiFyExtension.deps.json
-C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\LinkiFyExtension\bin\Debug\netstandard1.4\LinkiFyExtension.dll
-C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\LinkiFyExtension\bin\Debug\netstandard1.4\LinkiFyExtension.pdb
-C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\LinkiFyExtension\obj\Debug\netstandard1.4\LinkiFyExtension.csprojResolveAssemblyReference.cache
-C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\LinkiFyExtension\obj\Debug\netstandard1.4\LinkiFyExtension.AssemblyInfo.cs
-C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\LinkiFyExtension\obj\Debug\netstandard1.4\LinkiFyExtension.dll
-C:\Users\MSTFZDMR\Source\Repos\ILinkiFy\LinkiFyExtension\obj\Debug\netstandard1.4\LinkiFyExtension.pdb

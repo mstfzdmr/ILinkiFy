@@ -22,6 +22,7 @@ namespace ILinkiFyTests
             valueToLinks = new List<LinkiFyDataModel>() {
                 new LinkiFyDataModel { Text = "open source", Value = "https://github.com/open-source" },
                 new LinkiFyDataModel { Text = "business", Value = "https://github.com/business" },
+                new LinkiFyDataModel { Text = "developers", Value = "https://github.com/mstfzdmr" }
             };
 
             linkiFyService = new LinkiFyService();
