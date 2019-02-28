@@ -1,8 +1,10 @@
 using LinkiFy.Integration.Tests.Models;
 using LinkiFyExtension;
 using LinkiFyExtension.Models;
+using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
+using System.Collections.Specialized;
+using System.Linq;
 using Xunit;
 
 namespace LinkiFy.Integration.Tests
@@ -73,6 +75,57 @@ namespace LinkiFy.Integration.Tests
             var result = _linkiFyService.UrlReplacement(string.Empty, replaceKeys);
 
             Assert.Equal(result, string.Empty);
+        }
+
+        [Fact]
+        public void ToQueryStringValue()
+        {
+            string result = _linkiFyService.ToQueryStringValue<string>(new NameValueCollection { { "queryStringKey", "queryStringValue" } }, "queryStringKey");
+
+            Assert.Equal(result, "queryStringValue");
+        }
+
+        [Fact]
+        public void ParseQueryString()
+        {
+            var uri = new Uri("https://docs.microsoft.com/tr-tr/azure/devops/repos/git/git-config?tabs=visual-studio&view=azure-devops&viewFallbackFrom=vsts", UriKind.Absolute);
+
+            IEnumerable<KeyValuePair<string, string>> keyValuePairs = _linkiFyService.ParseQueryString(uri);
+
+            var result = keyValuePairs.ToList();
+
+            Assert.Equal(result[0].Key, "tabs");
+            Assert.Equal(result[0].Value, "visual-studio");
+
+            Assert.Equal(result[1].Key, "view");
+            Assert.Equal(result[1].Value, "azure-devops");
+
+            Assert.Equal(result[2].Key, "viewFallbackFrom");
+            Assert.Equal(result[2].Value, "vsts");
+        }
+
+        [Fact]
+        public void ExtendQuery()
+        {
+            var result = _linkiFyService.ExtendQuery("https://docs.microsoft.com/tr-tr/azure/devops/repos/git/git-config", new Dictionary<string, string> { { "tabs", "visual-studio" }, { "view", "azure-devops" }, { "viewFallbackFrom", "vsts" } });
+
+            Assert.Equal(result, "https://docs.microsoft.com/tr-tr/azure/devops/repos/git/git-config?tabs=visual-studio&view=azure-devops&viewFallbackFrom=vsts");
+        }
+
+        [Fact]
+        public void GetFirstSlice()
+        {
+            var result = _linkiFyService.GetFirstSlice("ILinkiFy", 5);
+
+            Assert.Equal(result, "ILink");
+        }
+
+        [Fact]
+        public void GetLastSlice()
+        {
+            var result = _linkiFyService.GetLastSlice("ILinkiFy", 2);
+
+            Assert.Equal(result, "Fy");
         }
     }
 }

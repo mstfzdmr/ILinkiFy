@@ -12,5 +12,7 @@ namespace LinkiFyExtension
         T ToQueryStringValue<T>(NameValueCollection queryStringNameValueCollection, string queryStringKey);
         IEnumerable<KeyValuePair<string, string>> ParseQueryString(Uri uri);
         string ExtendQuery(string url, Dictionary<string, string> queryStringParameters);
+        string GetFirstSlice(string source, int tailLength = 1);
+        string GetLastSlice(string source, int tailLength = 1);
     }
 }

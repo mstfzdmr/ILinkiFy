@@ -75,11 +75,27 @@ namespace LinkiFyExtension
         {
             foreach (var parameter in queryStringParameters)
             {
-                url = url.IndexOf('?') == 0 ? $"{url}?{parameter.Key}={parameter.Value}" : $"{url}&{parameter.Key}={parameter.Value}";
+                url = url.IndexOf('?') == -1 ? $"{url}?{parameter.Key}={parameter.Value}" : $"{url}&{parameter.Key}={parameter.Value}";
             }
 
             return url;
         }
+        public string GetFirstSlice(string source, int tailLength = 1)
+        {
+            if (tailLength >= source.Length)
+                return source;
+
+            return source.Substring(0, tailLength);
+        }
+        public string GetLastSlice(string source, int tailLength = 1)
+        {
+            if (tailLength >= source.Length)
+                return source;
+
+            return source.Substring(source.Length - tailLength);
+        }
+
+        #region Private Methods
         private string FindAndConcat(string content, string word, string link, int replaceCount)
         {
             var result = content ?? string.Empty;
@@ -109,12 +125,6 @@ namespace LinkiFyExtension
 
             return result;
         }
-        private string GetLast(string source, int tailLength)
-        {
-            if (tailLength >= source.Length)
-                return source;
-
-            return source.Substring(source.Length - tailLength);
-        }
+        #endregion
     }
 }
