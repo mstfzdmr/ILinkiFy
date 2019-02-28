@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Text.RegularExpressions;
 using LinkiFyExtension.Models;
 
@@ -9,9 +11,7 @@ namespace LinkiFyExtension
         public string GetLinkifyContent(string content, List<LinkiFyDataModel> valueToLinks)
         {
             if (string.IsNullOrEmpty(content))
-            {
                 return string.Empty;
-            }
 
             var replacedLinkiFyMaxLinkCount = 0;
             var replacedContent = content;
@@ -30,7 +30,56 @@ namespace LinkiFyExtension
 
             return replacedContent;
         }
+        public string UrlReplacement(string htmlContent, Dictionary<string, string> replaceKeys)
+        {
+            if (string.IsNullOrEmpty(htmlContent))
+                return string.Empty;
 
+            var pattern = string.Concat(@"\b", "(href=\"([^\"]*))", @"\b");
+            var regex = new Regex(pattern, RegexOptions.IgnoreCase);
+            var matches = regex.Matches(htmlContent);
+            foreach (Match match in matches)
+            {
+                var matchValue = match?.Groups[2].Value;
+                if (!replaceKeys.TryGetValue(matchValue, out string replacement))
+                    continue;
+
+                htmlContent = htmlContent.Replace(match.Value, $"{replacement}");
+            }
+
+            return htmlContent;
+        }
+        public T ToQueryStringValue<T>(NameValueCollection queryStringNameValueCollection, string queryStringKey)
+        {
+            if (queryStringNameValueCollection[queryStringKey] != null)
+            {
+                return (T)Convert.ChangeType(queryStringNameValueCollection[queryStringKey], typeof(T));
+            }
+
+            return (T)Convert.ChangeType(default(T), typeof(T));
+        }
+        public IEnumerable<KeyValuePair<string, string>> ParseQueryString(Uri uri)
+        {
+            if (uri == null)
+                throw new ArgumentException("uri");
+
+            var queryStringRegex = new Regex(@"[\?&](?<name>[^&=]+)=(?<value>[^&=]+)");
+            var matches = queryStringRegex.Matches(uri.OriginalString);
+            for (var i = 0; i < matches.Count; i++)
+            {
+                var match = matches[i];
+                yield return new KeyValuePair<string, string>(match.Groups["name"].Value, match.Groups["value"].Value);
+            }
+        }
+        public string ExtendQuery(string url, Dictionary<string, string> queryStringParameters)
+        {
+            foreach (var parameter in queryStringParameters)
+            {
+                url = url.IndexOf('?') == 0 ? $"{url}?{parameter.Key}={parameter.Value}" : $"{url}&{parameter.Key}={parameter.Value}";
+            }
+
+            return url;
+        }
         private string FindAndConcat(string content, string word, string link, int replaceCount)
         {
             var result = content ?? string.Empty;
@@ -59,6 +108,13 @@ namespace LinkiFyExtension
             }
 
             return result;
+        }
+        private string GetLast(string source, int tailLength)
+        {
+            if (tailLength >= source.Length)
+                return source;
+
+            return source.Substring(source.Length - tailLength);
         }
     }
 }

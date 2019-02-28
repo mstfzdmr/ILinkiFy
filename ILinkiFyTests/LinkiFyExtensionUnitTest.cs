@@ -39,7 +39,7 @@ namespace ILinkiFyTests
         [TestMethod]
         public void LinkiFyService_ShouldBeContentNullTest()
         {
-            var linkiFyContent = linkiFyService.GetLinkifyContent(string.Empty, valueToLinks);
+            var linkiFyContent = linkiFyService.GetLinkifyContent(content, valueToLinks);
             Assert.IsNull(linkiFyContent);
             Assert.AreEqual(linkiFyContent, content);
         }
