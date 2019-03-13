@@ -5,9 +5,7 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkiFyExtension", "LinkiFyExtension\LinkiFyExtension.csproj", "{5E738E85-0B76-4A73-89F3-C72788AB705D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkiFy.Integration.Tests", "LinkiFy.Integration.Tests\LinkiFy.Integration.Tests.csproj", "{B37EC597-57D7-48F6-BEAD-DBA74FEB2F5B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkiFy.Unit.Tests", "LinkiFy.Unit.Tests\LinkiFy.Unit.Tests.csproj", "{55E44617-9CFC-45A9-AF06-A07E8F5A5F3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkiFy.Integration.Tests", "LinkiFy.Integration.Tests\LinkiFy.Integration.Tests.csproj", "{B37EC597-57D7-48F6-BEAD-DBA74FEB2F5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{B37EC597-57D7-48F6-BEAD-DBA74FEB2F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B37EC597-57D7-48F6-BEAD-DBA74FEB2F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B37EC597-57D7-48F6-BEAD-DBA74FEB2F5B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55E44617-9CFC-45A9-AF06-A07E8F5A5F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55E44617-9CFC-45A9-AF06-A07E8F5A5F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55E44617-9CFC-45A9-AF06-A07E8F5A5F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55E44617-9CFC-45A9-AF06-A07E8F5A5F3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
