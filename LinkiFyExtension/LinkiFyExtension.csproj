@@ -5,6 +5,15 @@
     <Version>1.0.1</Version>
     <AssemblyVersion>1.0.1.1</AssemblyVersion>
     <FileVersion>1.0.1.1</FileVersion>
+    <Copyright>Codesology Technology</Copyright>
+    <Description>.Net Framework</Description>
+    <PackageTags>.Net Framework</PackageTags>
+    <Authors>Mustafa Ozdemir</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/mstfzdmr/ILinkiFy</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mstfzdmr/ILinkiFy</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/mstfzdmr/ILinkiFy/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageId>ILinkiFy</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
