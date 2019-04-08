@@ -127,5 +127,13 @@ namespace LinkiFy.Integration.Tests
 
             Assert.Equal(result, "Fy");
         }
+
+        [Fact]
+        public void CapitalizeFirst()
+        {
+            var result = _linkiFyService.CapitalizeFirst("there is no reason to worry about this code. move on to bigger problems!");
+
+            Assert.Equal(result, "There is no reason to worry about this code. Move on to bigger problems!");
+        }
     }
 }

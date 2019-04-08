@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Text;
 using System.Text.RegularExpressions;
 using LinkiFyExtension.Models;
 
@@ -93,6 +94,26 @@ namespace LinkiFyExtension
                 return source;
 
             return source.Substring(source.Length - tailLength);
+        }
+        public string CapitalizeFirst(string source)
+        {
+            bool isNewSentense = true;
+            var result = new StringBuilder(source.Length);
+            for (int i = 0; i < source.Length; i++)
+            {
+                if (isNewSentense && char.IsLetter(source[i]))
+                {
+                    result.Append(char.ToUpper(source[i]));
+                    isNewSentense = false;
+                }
+                else
+                    result.Append(source[i]);
+
+                if (source[i] == '!' || source[i] == '?' || source[i] == '.' || source[i] == ':')
+                    isNewSentense = true;
+            }
+
+            return result.ToString();
         }
 
         #region Private Methods
